@@ -25,13 +25,7 @@ public class HomeServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") != null) {
             getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
         } else {
-            getServletContext().getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
+            response.sendRedirect("login");
         }
     }
-
-//    @Override
-//    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-//            throws ServletException, IOException {
-//        getServletContext().getRequestDispatcher("/WEB-INF/home.jsp").forward(request, response);
-//    }
 }
